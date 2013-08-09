@@ -4,26 +4,13 @@
 #
 class wget::params {
 
-  $package = $::osfamily ? {
-    Suse    => 'wget',
-    OpenBSD => '',
-    default => 'wget-server',
-  }
-
-  $service = $::osfamily ? {
-    Debian  => 'ssh',
-    default => 'sshd',
-  }
-
-  $service_subscribe = Class['wget::config']
+  $package = 'wget'
 
   $file = $::osfamily ? {
-    default => '/etc/ssh/sshd_config',
+    default => '/etc/wgetrc',
   }
 
   $file_mode = $::osfamily ? {
-    Suse    => '0640',
-    OpenBSD => '0644',
     default => '0600',
   }
 
@@ -33,10 +20,6 @@ class wget::params {
 
   $file_group = $::osfamily ? {
     default => 'root',
-  }
-
-  $dir = $::osfamily ? {
-    default => '/etc/ssh',
   }
 
 }

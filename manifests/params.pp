@@ -10,9 +10,7 @@ class wget::params {
     default => '/etc/wgetrc',
   }
 
-  $file_mode = $::osfamily ? {
-    default => '0600',
-  }
+  $file_mode = '0644'
 
   $file_owner = $::osfamily ? {
     default => 'root',

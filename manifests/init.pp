@@ -55,8 +55,6 @@ class wget (
   if $wget::package {
     package { $wget::package:
       ensure   => $wget::managed_package_ensure,
-      provider => $wget::package_provider,
-      noop     => $wget::noop,
     }
   }
 
@@ -69,8 +67,6 @@ class wget (
       group   => $wget::file_group,
       source  => $wget::file_source,
       content => $wget::managed_file_content,
-      audit   => $wget::audit,
-      noop    => $wget::noop,
     }
   }
 

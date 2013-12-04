@@ -52,7 +52,7 @@ Released under the terms of Apache 2 License.
 * Use a custom template and provide an hash of custom configurations that you can use inside the template
 
         class { 'wget':
-          filetemplate       => 'example42/wget/wget.conf.erb',
+          file_template      => 'example42/wget/wget.conf.erb',
           file_options_hash  => {
             opt  => 'value',
             opt2 => 'value2',
